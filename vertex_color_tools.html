@@ -1,0 +1,75 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Eelis Otsamo</title>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav class="top-navbar">
+			<div class="top-navbar-content">
+				<div>
+					<h1><a href="/">Eelis Otsamo</a></h1>
+				</div>
+				<a class="site-icon" href="https://github.com/EelisOtsamo"><img src="images/github-mark.svg" alt="Github link"/></a>
+			</div>
+		</nav>
+	</header>
+	<div class="project-image-container">
+		<img class="project-image" src=images/vertex_color_tools/thumb_wide.jpg alt="" />
+	</div>
+
+	<main class="main-container main-project-container">
+		<article>
+			<h1>Vertex Color Tools</h1>
+			<div class="date">2023</div>
+			<div class="line"></div>			<a href="https://github.com/EelisOtsamo/VertexColorTools/tree/main">Project Page on GitHub</a>
+			<p>
+				Blender add-on for painting and editing vertex colors.
+			</p>
+			<p>
+				Blender provides a paint mode for vertex colors, but working on low-poly models with it is difficult.
+				The add-on provides tools and operators for painting vertex colors directly on any individual mesh
+				elements.
+			</p>
+			<p>
+				The add-on also includes tools for painting gradients in 3D space or along the mesh topology.
+			</p>
+			<h4>Challenges:</h4>
+			<ul>
+				<li>
+					Learning Blender's internal <a
+						href="https://wiki.blender.org/wiki/Source/Modeling/BMesh/Design">BMesh structure</a> and how it
+					stores color attributes and topology information.
+				</li>
+				<li>
+					Achieving feature parity with the built-in color manipulation tools in Blender, which required
+					porting some parts of Blender's C and GLSL code to Python, since they are not exposed to the API.
+				</li>
+				<li>
+					Learning the GPU module of Blender's Python API, which is used for drawing widgets in the 3D
+					viewport using GLSL.
+				</li>
+			</ul>
+			</p>
+
+			<h3>Video</h3>
+			<div class="line"></div>
+			<br>
+			<div class="video-container">
+				<iframe width="100%" height="100%"
+					src="https://www.youtube-nocookie.com/embed/LvQCdksnhYE?si=4PEF1T5Y1uPuFq9W"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+			</div>
+		</article>
+	</main>
+	<footer>
+	</footer>
+</body>
+
+</html>

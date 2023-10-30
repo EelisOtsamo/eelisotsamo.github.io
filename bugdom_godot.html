@@ -1,0 +1,107 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Eelis Otsamo</title>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav class="top-navbar">
+			<div class="top-navbar-content">
+				<div>
+					<h1><a href="/">Eelis Otsamo</a></h1>
+				</div>
+				<a class="site-icon" href="https://github.com/EelisOtsamo"><img src="images/github-mark.svg" alt="Github link"/></a>
+			</div>
+		</nav>
+	</header>	<div class="project-image-container">
+		<img class="project-image" src=images/bugdom_godot/thumb_wide.jpg alt="" />
+	</div>
+	<main class="main-container main-project-container">
+		<article>
+			<h1>Bugdom (1999) Godot Port</h1>
+			<div class="date">2023</div>
+			<div class="line"></div>			<p>
+				Project I initially started to learn Godot's import plugin system by writing an importer for 3DMF
+				(format used
+				in the Mac OS QuickDraw 3D) models and textures used in the Mac game <a
+					href="https://www.pangeasoft.net/bug/index.html"><cite>Bugdom</cite></a> by Pangea Software.
+			</p>
+			<p>
+				At first, I wrote a GDScript importer for the 3DMF based on the <a
+					href="https://github.com/jorio/Pomme/tree/master">Pomme</a> implementation of the Macintosh Toolbox
+				C API used in the <a href="https://github.com/jorio/Bugdom">updated version of Bugdom</a>
+			</p>
+			<p>
+				After learning how the 3DMF file format works, I rewrote the importer in C++ using the GDExtension
+				system
+				provided by Godot.
+			</p>
+			<p>
+				Using the level data from Bugdom, I wrote an import script that creates a Godot scene tree using the
+				object positions and terrain data. I created prefab scenes for the different object types in the game
+				and ported the original C game logic, collision data, and animated shaders to GDScript, which the level
+				import
+				script then places using the level data.
+			</p>
+			<p>
+
+			</p>
+			<h4>Challenges:</h4>
+			<ul>
+				<li>
+					Figuring out the layout of texture pixel data in the 3DMF format was challenging, especially the
+					terrain texture maps, since original game generates the terrain mesh and textures dynamically around
+					the player depending on view distance.
+				</li>
+				<li>
+					Bugdom stores level data, such as terrain heightmaps and object positions, in a custom format, and
+					the
+					updated Bugdom version <a
+						href="https://github.com/jorio/Nanosaur/issues/3#issuecomment-727539314">converted the files</a>
+					to make cross-platform porting easier. Instead of integrating the support for the converted files, I
+					instead
+					modified the Bugdom source to dump the level data I intended to use during runtime to a simple
+					binary format, which I then import in the GDExtension.
+				</li>
+			</ul>
+			<h3>Images</h3><sub class="pointer">Click to toggle fullscreen</sub><sub class="touch">Tap to toggle fullscreen</sub>
+			<div class="line"></div>
+			<br>
+			<div class="image-pair-header">
+				<h4>Original</h4>
+				<h4>Godot</h4>
+			</div>
+			<div class="image-pair">
+				<img src=images/bugdom_godot/in_game_bugdom.jpg class="image-pair-img" onclick="imageOpenFullscreen(this)"/>
+				<img src=images/bugdom_godot/in_game_godot.jpg class="image-pair-img" onclick="imageOpenFullscreen(this)"/>
+			</div>
+			<div class="image-pair-header">
+				<h4>Original</h4>
+				<h4>Godot</h4>
+			</div>
+			<div class="image-pair">
+				<img src=images/bugdom_godot/main_menu_bugdom.jpg class="image-pair-img" onclick="imageOpenFullscreen(this)"/>
+				<img src=images/bugdom_godot/main_menu_godot.jpg class="image-pair-img" onclick="imageOpenFullscreen(this)"/>
+			</div>
+			<h3>Video</h3>
+			<div class="line"></div>
+			<br />
+			<div class="video-container">
+				<iframe width="100%" height="100%"
+					src="https://www.youtube-nocookie.com/embed/0DokrZge0eg?si=mXVPab3J-H8AxD0Y"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+			</div>
+		</article>
+	</main>
+	<footer>
+	</footer>
+	<div id="fullpage" onclick="imageCloseFullscreen()"></div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Eelis Otsamo</title>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+	<header>
+		<nav class="top-navbar">
+			<div class="top-navbar-content">
+				<div>
+					<h1><a href="/">Eelis Otsamo</a></h1>
+				</div>
+				<a class="site-icon" href="https://github.com/EelisOtsamo"><img src="images/github-mark.svg" alt="Github link"/></a>
+			</div>
+		</nav>
+	</header>	<div class="project-image-container">
+		<img class="project-image" src=images/raycast_vehicle/thumb_wide.jpg alt="" />
+	</div>
+	<main class="main-container main-project-container">
+		<article>
+			<h1>C++ Raycast Vehicle for Unreal Engine</h1>
+			<div class="date">2020</div>
+			<div class="line"></div>
+			<p>
+				An implementation of the raycast vehicle model using a custom C++ PawnMovementComponent.
+			</p>
+			<p>
+				The vehicle body uses a static mesh for collision and a skeletal mesh for the visual representation. The
+				suspension is calculated by performing a raycast against the ground at each wheel and using the distance to
+				apply a spring force. The skeletal mesh uses a modified AnimInstance similar to Epic's UE4 PhysX
+				VehicleAnimInstance, and is mainly used to pass the wheel parameters to the animation blueprint.
+			</p>
+			<p>
+				Adjusting the handling of the vehicle is more complex compared to a kinematic model because of the
+				number of physics parameters, so I used Unreal's UProperty reflection system to expose all of the
+				actor and wheel properties during run-time. I also added a system that can draw a graph of any of the
+				properties of the vehicle over time.
+			</p>
+			<p>
+				The reflection system also allows modifying and creating new vehicle types directly in the Editor.
+			</p>
+			<p style="margin-left: 20px;">
+				Vehicle model by <a href="https://animpic-studio.art/">AnimPic Studio</a>. <br />
+			</p>
+			<h3>Video</h3>
+			<div class="line"></div>
+			<br>
+			<div class="video-container">
+				<iframe width="100%" height="100%"
+					src="https://www.youtube-nocookie.com/embed/qIZ1BjuaTTg?si=jxfQo0yuUjTnmzCm"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen></iframe>
+			</div>
+
+		</article>
+	</main>
+	<footer>
+	</footer>
+</body>
+
+</html>
