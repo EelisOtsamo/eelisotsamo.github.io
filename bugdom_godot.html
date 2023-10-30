@@ -25,7 +25,7 @@
 			<h1>Bugdom (1999) Godot Port</h1>
 			<div class="date">2023</div>
 			<div class="line"></div>			<p>
-				Project I initially started to learn Godot's import plugin system by writing an importer for 3DMF
+				I initially started to learn Godot's import plugin system by writing an importer for 3DMF
 				(format used
 				in the Mac OS QuickDraw 3D) models and textures used in the Mac game <a
 					href="https://www.pangeasoft.net/bug/index.html"><cite>Bugdom</cite></a> by Pangea Software.
@@ -53,9 +53,8 @@
 			<h4>Challenges:</h4>
 			<ul>
 				<li>
-					Figuring out the layout of texture pixel data in the 3DMF format was challenging, especially the
-					terrain texture maps, since original game generates the terrain mesh and textures dynamically around
-					the player depending on view distance.
+					The original game generates the terrain mesh and textures dynamically around the player depending on view distance.
+					Because of this, reverse engineering the layout of texture pixel data in the 3DMF format was challenging.
 				</li>
 				<li>
 					Bugdom stores level data, such as terrain heightmaps and object positions, in a custom format, and
